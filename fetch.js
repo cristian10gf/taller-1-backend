@@ -18,5 +18,4 @@ async function getMonsterFilters() {
   return monsters.slice(0, N);
 }
 
-console.log(await getMonstersDetails('basilisk'));
 export { N, URL, getMonsters, getMonstersDetails, getMonsterFilters }
