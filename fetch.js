@@ -8,11 +8,14 @@ async function getMonsters() {
   return data.results;
 }
 
-async function getMonstersDetails(...url) {
-  return await Promise.all(url.map((u) => fetch(u)));
+async function getMonstersDetails(...names) {
+  const fetchNames = names.map(name => URL + name).map((u) => fetch(u))
+  return await Promise.all(fetchNames);
 }
 
-async function getMosterFilters() {
+async function getMonsterFilters() {
   const monsters = await getMonsters();
   return monsters.slice(0, N);
 }
+
+export { N, URL, getMonsters, getMonstersDetails, getMonsterFilters }
