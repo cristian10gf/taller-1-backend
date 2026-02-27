@@ -9,7 +9,7 @@ async function getMonsters() {
 }
 
 async function getMonstersDetails(...names) {
-  const fetchNames = names.map(name => URL + name).map((u) => fetch(u))
+  const fetchNames = names.map(name => URL + '/' + name).map((u) => fetch(u))
   return await Promise.all(fetchNames);
 }
 
@@ -18,4 +18,5 @@ async function getMonsterFilters() {
   return monsters.slice(0, N);
 }
 
+console.log(await getMonstersDetails('basilisk'));
 export { N, URL, getMonsters, getMonstersDetails, getMonsterFilters }
