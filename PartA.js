@@ -28,6 +28,7 @@ export async function getMonstersData() {
   return mostersDataJson
 }
 
+
 export function processMonstersData(monsters) {
   return monsters.map((m) => {
     const stats = {
