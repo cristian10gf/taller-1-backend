@@ -4,7 +4,7 @@ const data = processedMonstersData;
 const cr1 = 5;
 const cr2 = 6;
 const hp = 80;
-const type = dragon;
+const type = "dragon";
 const hasLegendary = true;
 
 
@@ -30,6 +30,7 @@ const less_than = 1;
 const between1 = [2, 4];
 const between2 = [5, 9];
 const more_than = 10;
+
 function B5(monsters) {
   const result = monsters.reduce((acc, monster) => {
     const { type, cr, hp } = monster;
@@ -79,7 +80,7 @@ function B6(monsters) {
   return result;
 }
 
-const b5 = B5("b5", data);
-const b6 = B6("b6", data);
-console.log(b5);
-console.log(b6);
+const b5 = B5(data);
+const b6 = B6(data);
+console.log("b5", b5);
+console.log("b6", b6);
