@@ -1,5 +1,25 @@
 import { getMonsterFilters, getMonstersDetails } from "./fetch.js";
 
+/* 
+{
+ index,
+ name,
+ size,
+ type,
+ alignment,
+ cr, // challenge_rating
+ ac, // armor_class (ojo: a veces es array)
+ hp, // hit_points
+ speed, // normalizar a número max (walk/fly/swim)
+ stats: { str, dex, con, int, wis, cha },
+ immuneCount, // damage_immunities.length
+ resistCount, // damage_resistances.length
+ vulnCount, // damage_vulnerabilities.length
+hasLegendary // legendary_actions?.length > 0
+*/
+
+
+
 export async function getMonstersData() {
   const allMonsters = await getMonsterFilters();
   const indexMonsters = allMonsters.map((m) => m.index);
